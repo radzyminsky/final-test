@@ -1,0 +1,23 @@
+<div class="row">
+</div>
+
+<div *ngFor='let frame of list_frame'>
+    <app-frame *ngIf='show1' [frame]=frame (event_name)="updateFrame($event)"></app-frame>
+</div>
+
+<div *ngFor='let lenses of list_lenses'>
+    <app-lenses *ngIf='show2' [lenses]=lenses (event_name)="updateLenses($event)"></app-lenses>
+</div>
+
+<div>
+    <app-form *ngIf='show3' [list_form]=list_form (event_name)="submit_($event)"></app-form>
+</div>
+
+<div *ngIf='show4' >
+    <h1>Order summary</h1>
+    <h4>frame:  {{list_frame[this.index].type}}</h4>
+    <h4>Lenses:  {{list_lenses[this.index2].type}}</h4>
+    <h5>Right lens:  {{list_form[0].value_}} cylinder:  {{list_form[2].value_}}</h5>
+    <h5>Left lens:  {{list_form[1].value_}} cylinder:  {{list_form[3].value_}}</h5>
+
+</div>
